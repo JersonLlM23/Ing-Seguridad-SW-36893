@@ -1,0 +1,10 @@
+Sí: ese comando enciende el servidor del proyecto. Hazlo así:
+
+1. Abre una terminal.
+2. Copia y pega esta línea completa y pulsa Enter:
+
+   cd /home/erickobando/Documentos/ErickObando/septimo_semestre/seguridad/PrimerParcial/Proyecto && BLOQUEO=on .venv/bin/python app.py
+
+3. Deja la terminal abierta y entra en tu navegador a http://127.0.0.1:5000/login
+
+«.venv/bin/python» es el Python que ya está preparado para este proyecto. «BLOQUEO=on» solo activa la función que bloquea la cuenta después de tres intentos fallidos. Cuando termines, vuelve a la terminal y pulsa Ctrl+C para apagar el servidor.

@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://www.temu.com/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.temu.com/favicon.ico">
+    <title>Temu - Completa tu información</title>
+    <style>
+        /* ============================================================
+           RESET Y BASE
+           ============================================================ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #fff;
+            color: #222;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ============================================================
+           BARRA SUPERIOR (Envío gratis / Entrega / App)
+           ============================================================ */
+        .top-bar {
+            min-height: 52px;
+            background: #000;
+            color: #fff8a6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px max(44px, calc((100% - 1178px) / 2));
+            font-size: 13px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar-item svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .top-bar-item span {
+            font-weight: 600;
+        }
+
+        .top-bar-item small {
+            opacity: 0.8;
+            display: block;
+            font-weight: 400;
+        }
+
+        .top-bar-divider {
+            width: 1px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ============================================================
+           HEADER PRINCIPAL (Logo, nav, buscador, iconos)
+           ============================================================ */
+        .main-header {
+            min-height: 65px;
+            background: #4b0b63;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 7px max(44px, calc((100% - 1178px) / 2));
+            gap: 15px;
+        }
+
+        .logo-temu {
+            width: 50px;
+            height: 50px;
+            flex: 0 0 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        .logo-temu::before {
+            content: none;
+        }
+
+        .logo-temu svg {
+            display: block;
+            width: 50px;
+            height: 50px;
+            fill: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            flex: 0 0 auto;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar {
+            flex: 1 1 300px;
+            min-width: 220px;
+            max-width: none;
+            height: 42px;
+            display: flex;
+            background: #fff;
+            border-radius: 22px;
+            padding: 2px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            outline: none;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .search-bar button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 0 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar button svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 13px;
+            flex: 0 0 auto;
+            align-items: center;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .header-icons .icon-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .header-icons .icon-item svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .header-icons .icon-item div {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .header-icons .icon-item small {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        /* ============================================================
+           BANNER VERDE (¿Por qué elegir Temu?)
+           ============================================================ */
+        .green-banner {
+            width: min(calc(100% - 48px), 1178px);
+            min-height: 38px;
+            background: #079407;
+            color: #fff;
+            margin: 30px auto 0;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 18px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .green-banner .features {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .green-banner .features span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .green-banner .features svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .green-banner .arrow-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .green-banner .arrow-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .warning-banner {
+            width: min(calc(100% - 48px), 1178px);
+            min-height: 39px;
+            margin: 0 auto;
+            border: 1px solid #079407;
+            border-top: 0;
+            border-radius: 0 0 8px 8px;
+            padding: 9px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #087d08;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .warning-banner .text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-banner .text svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .warning-banner .action {
+            color: #0A8800;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ============================================================
+           SECCIÓN OFERTAS RELÁMPAGO / LIQUIDACIÓN
+           ============================================================ */
+        .flash-sales {
+            width: min(calc(100% - 48px), 1178px);
+            margin: 30px auto 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .flash-column {
+            display: block;
+            min-width: 0;
+            background: #fff;
+        }
+
+        .flash-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 34px;
+            margin-bottom: 12px;
+            gap: 14px;
+        }
+
+        .flash-header h2 {
+            min-width: 0;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
+        }
+
+        .flash-header h2 svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .flash-header .more-link {
+            min-width: 0;
+            overflow: hidden;
+            color: #555;
+            font-size: 13px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .flash-products {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .flash-card {
+            min-width: 0;
+            overflow: hidden;
+            background: #fff;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .flash-card .img-container {
+            position: relative;
+            padding-bottom: 100%;
+        }
+
+        .flash-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flash-card .ad-tag {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .flash-card .price-info {
+            padding: 8px;
+            background: #fff;
+        }
+
+        .flash-card .price-info .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FB7701;
+        }
+
+        .flash-card .price-info .old-price {
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 4px;
+        }
+
+        .flash-card .discount {
+            font-size: 11px;
+            color: #FB7701;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* ============================================================
+           EXPLORA TUS INTERESES (Categorías)
+           ============================================================ */
+        .interests-section {
+            width: min(calc(100% - 48px), 1178px);
+            margin: 22px auto 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .interests-hero {
+            width: 100%;
+            margin-bottom: 18px;
+        }
+
+        .interests-hero ._1nMmLviB {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .interests-hero ._14PjlCdZ {
+            width: min(100%, 650px);
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .interests-hero ._14PjlCdZ img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .interests-hero .HvqRZcRc {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .interests-hero ._1UynudNF {
+            margin: 0 0 14px;
+            color: #111;
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -.3px;
+        }
+
+        .category-list {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            scrollbar-width: none;
+        }
+
+        .category-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-btn {
+            white-space: nowrap;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.15s;
+            flex-shrink: 0;
+        }
+
+        .category-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .category-btn.active {
+            border-color: #222;
+            background: #f5f5f5;
+        }
+
+        /* ============================================================
+           GRID DE PRODUCTOS (15 productos)
+           ============================================================ */
+        .products-grid {
+            width: min(calc(100% - 48px), 1178px);
+            margin: 16px auto 0;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 18px;
+            padding: 0 0 40px;
+        }
+
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card .img-container {
+            position: relative;
+            padding-bottom: 100%;
+            background: #f8f8f8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .product-card .img-container img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-card .ad-tag {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .product-card .price-info {
+            padding: 10px 4px;
+        }
+
+        .product-card .price-info .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FB7701;
+        }
+
+        .product-card .price-info .old-price {
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 4px;
+        }
+
+        .product-card .sales {
+            font-size: 11px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .product-card .badge {
+            display: inline-block;
+            background: #f5e6e6;
+            color: #c00;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        /* ============================================================
+           VER MÁS Y FOOTER
+           ============================================================ */
+        .load-more-section {
+            min-height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 34px 16px 54px;
+            background: #fff;
+        }
+
+        .load-more-button {
+            width: 220px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            border: 0;
+            border-radius: 28px;
+            background: #fb7701;
+            color: #fff;
+            font: 600 16px/18px inherit;
+            cursor: pointer;
+            transition: background .15s ease, transform .08s ease;
+        }
+
+        .load-more-button:hover {
+            background: #e96800;
+        }
+
+        .load-more-button:active {
+            transform: scale(.985);
+        }
+
+        .load-more-button svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .site-footer {
+            background: #1f1f1f;
+            color: #d5d5d5;
+            padding: 34px 0 18px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-inner {
+            width: min(calc(100% - 88px), 1178px);
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.12fr .86fr .82fr 1.28fr;
+            gap: 42px;
+        }
+
+        .footer-column {
+            min-width: 0;
+        }
+
+        .footer-column h3,
+        .footer-trust h3 {
+            margin: 0 0 13px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .footer-column ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin: 0 0 7px;
+        }
+
+        .site-footer a {
+            color: #d5d5d5;
+            text-decoration: none;
+            cursor: default;
+        }
+
+        .footer-app-features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 3px 18px;
+            margin-bottom: 14px;
+        }
+
+        .footer-app-feature {
+            overflow: hidden;
+            color: #fff;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .footer-app-feature::before {
+            content: "◆";
+            margin-right: 7px;
+            color: #fff;
+            font-size: 10px;
+        }
+
+        .app-badges {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin: 12px 0 28px;
+        }
+
+        .app-badge {
+            min-height: 51px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #aaa;
+            border-radius: 28px;
+            color: #fff;
+            line-height: 1.08;
+        }
+
+        .app-badge small {
+            color: #bbb;
+            font-size: 10px;
+        }
+
+        .app-badge strong {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .social-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border: 1px solid #777;
+            border-radius: 50%;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .footer-trust {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 48px;
+            margin-top: 52px;
+            min-height: 94px;
+        }
+
+        .footer-logo-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .footer-logo-row img {
+            width: auto;
+            height: 25px;
+            max-width: 76px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 3px;
+            padding: 2px 4px;
+        }
+
+        .footer-bottom {
+            margin-top: 17px;
+            padding-top: 25px;
+            border-top: 1px solid #3a3a3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .footer-bottom a {
+            color: #aaa;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* Adaptación del contenido de fondo; no afecta al modal. */
+        @media (max-width: 1080px) {
+
+            .nav-links a:nth-child(2),
+            .nav-links a:nth-child(3),
+            .header-icons .icon-item:nth-child(2),
+            .header-icons .icon-item:nth-child(3) {
+                display: none;
+            }
+
+            .flash-header h2 {
+                font-size: 17px;
+            }
+
+            .flash-header .more-link {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .top-bar {
+                min-height: 34px;
+                padding: 5px 12px;
+            }
+
+            .top-bar-item:not(:first-child),
+            .top-bar-divider {
+                display: none;
+            }
+
+            .main-header {
+                min-height: 58px;
+                padding: 7px 10px;
+                gap: 9px;
+            }
+
+            .logo-temu {
+                width: 42px;
+                height: 42px;
+                flex-basis: 42px;
+                border-radius: 8px;
+            }
+
+            .logo-temu svg {
+                width: 42px;
+                height: 42px;
+                flex-basis: auto;
+            }
+
+            .nav-links,
+            .header-icons .icon-item:not(:last-child) {
+                display: none;
+            }
+
+            .search-bar {
+                min-width: 0;
+                height: 39px;
+            }
+
+            .search-bar input {
+                min-width: 0;
+                padding: 7px 12px;
+            }
+
+            .search-bar button {
+                padding: 0 15px;
+            }
+
+            .green-banner,
+            .warning-banner,
+            .flash-sales,
+            .interests-section,
+            .products-grid {
+                width: calc(100% - 20px);
+            }
+
+            .green-banner {
+                margin-top: 16px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .green-banner .features span:not(:first-child) {
+                display: none;
+            }
+
+            .warning-banner {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+
+            .warning-banner .text {
+                min-width: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .warning-banner .action {
+                display: none;
+            }
+
+            .flash-sales {
+                margin-top: 18px;
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+
+            .flash-header {
+                margin-bottom: 9px;
+            }
+
+            .flash-header h2 {
+                font-size: 16px;
+            }
+
+            .flash-header .more-link {
+                font-size: 11px;
+            }
+
+            .flash-products {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+            }
+
+            .flash-card .price-info {
+                padding: 6px 2px 10px;
+            }
+
+            .flash-card .price-info .current-price {
+                font-size: 16px;
+            }
+
+            .interests-hero ._14PjlCdZ {
+                width: min(100%, 430px);
+                height: 46px;
+            }
+
+            .interests-hero ._1UynudNF {
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            .category-btn {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+
+            .products-grid {
+                gap: 16px 10px;
+            }
+
+            .load-more-section {
+                min-height: 140px;
+                padding: 28px 16px 44px;
+            }
+
+            .load-more-button {
+                width: 200px;
+                height: 48px;
+            }
+
+            .site-footer {
+                padding-top: 28px;
+            }
+
+            .footer-inner {
+                width: calc(100% - 28px);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 30px 22px;
+            }
+
+            .footer-column--app {
+                grid-column: 1 / -1;
+            }
+
+            .footer-trust {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                margin-top: 38px;
+            }
+
+            .footer-bottom {
+                justify-content: flex-start;
+                gap: 10px 18px;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-column--app {
+                grid-column: auto;
+            }
+
+            .footer-app-features,
+            .app-badges {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ============================================================
+           MODAL LOGIN / REGISTRO (Mantenido intacto + Lógica de Seguridad)
+           ============================================================ */
+        :root {
+            --green: #0a8800;
+            --ink: #222;
+            --muted: #9a9a9a;
+            --line: #eaeaea;
+            --radius: 16px;
+        }
+
+        .login-overlay .span-green {
+            color: var(--green);
+        }
+
+        .login-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2147483647;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(0, 0, 0, .5);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            overflow: auto;
+        }
+
+        .login-overlay * {
+            box-sizing: border-box;
+        }
+
+        .login-overlay button,
+        .login-overlay input {
+            font-family: inherit;
+        }
+
+        .login-overlay .modal {
+            position: relative;
+            width: 100%;
+            max-width: min(1008px, 100vw);
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 24px 24px 20px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, .28);
+            animation: modal-in .22s ease-out;
+            flex: 0 0 auto;
+        }
+
+        @keyframes modal-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(.985);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .login-overlay .close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            border-radius: 50%;
+            color: #555;
+            cursor: pointer;
+            transition: background .15s;
+        }
+
+        .login-overlay .close:hover {
+            background: #f2f2f2;
+        }
+
+        .login-overlay .close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .login-overlay .title {
+            margin: 0 0 10px;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: -.2px;
+        }
+
+        .login-overlay .secure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin: 0 0 4px;
+            color: var(--green);
+            font-size: 12px;
+        }
+
+        .login-overlay .secure svg {
+            width: 13px;
+            height: 13px;
+            flex: none;
+            fill: var(--green);
+        }
+
+        .login-overlay .benefits {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0 0;
+            background: #f5fcf5;
+            padding: 12px 0;
+            border-radius: 8px;
+        }
+
+        .login-overlay .benefit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 0;
+            min-width: 0;
+            padding: 0 8px;
+        }
+
+        .login-overlay .benefit img {
+            width: 22px;
+            height: 22px;
+            flex: none;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .login-overlay .b-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .login-overlay .b-title {
+            color: var(--green);
+            font-size: 13px;
+            line-height: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .login-overlay .b-sub {
+            color: var(--green);
+            font-size: 11px;
+            line-height: 14px;
+            opacity: .85;
+            white-space: nowrap;
+        }
+
+        .login-overlay .benefit-sep {
+            flex: 0 0 1px;
+            width: 1px;
+            height: 28px;
+            background: #e0ebe0;
+        }
+
+        .login-overlay .caja.principal {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin-top: 24px;
+        }
+
+        .login-overlay .caja1 {
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-overlay .caja3 {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
+        .login-overlay .divider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 0 24px;
+            color: var(--muted);
+            font-size: 13px;
+            flex: 0 0 auto;
+        }
+
+        .login-overlay .divider::before,
+        .login-overlay .divider::after {
+            content: "";
+            flex: 1;
+            width: 1px;
+            background: var(--line);
+        }
+
+        .login-overlay .form {
+            margin-top: 0;
+        }
+
+        .login-overlay .contact-form-wrap {
+            width: min(100%, 760px);
+            margin: 24px auto 0;
+        }
+
+        .login-overlay .contact-form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px 16px;
+        }
+
+        .login-overlay .contact-field {
+            min-width: 0;
+        }
+
+        .login-overlay .contact-field.full-width,
+        .login-overlay .contact-form .btn-continue,
+        .login-overlay .contact-form-note {
+            grid-column: 1 / -1;
+        }
+
+        .login-overlay .contact-form-note {
+            margin: 0;
+            color: #777;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+        }
+
+        .login-overlay .contact-field.has-error .label {
+            color: #c62828;
+            text-decoration: underline;
+            text-decoration-color: #c62828;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+        }
+
+        .login-overlay .field-error {
+            min-height: 15px;
+            margin: 5px 2px 0;
+            color: #c62828;
+            font-size: 11px;
+            line-height: 15px;
+        }
+
+        .login-overlay .form-status {
+            grid-column: 1 / -1;
+            min-height: 17px;
+            margin: -4px 0 0;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .login-overlay .btn-continue:disabled {
+            opacity: .45;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .login-overlay .label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .login-overlay .input {
+            width: 100%;
+            height: 48px;
+            padding: 0 14px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--ink);
+            background: #fff;
+            outline: none;
+            transition: border-color .15s, box-shadow .15s;
+        }
+
+        .login-overlay .input::placeholder {
+            color: #b5b5b5;
+        }
+
+        .login-overlay .input:focus {
+            border-color: #222;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, .05);
+        }
+
+        .login-overlay .btn-continue {
+            width: 100%;
+            height: 48px;
+            margin-top: 16px;
+            border: none;
+            border-radius: 24px;
+            background: #fb7701;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity .15s, transform .05s;
+        }
+
+        .login-overlay .btn-continue:hover {
+            opacity: .88;
+        }
+
+        .login-overlay .btn-continue:active {
+            transform: scale(.995);
+        }
+
+        .login-overlay .social {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .login-overlay .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 48px;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: #fff;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background .15s, border-color .15s;
+        }
+
+        .login-overlay .social-btn:hover {
+            background: #f7f7f7;
+            border-color: #dcdcdc;
+        }
+
+        .login-overlay .social-btn svg {
+            width: 20px;
+            height: 20px;
+            flex: none;
+        }
+
+        .login-overlay .extra-container {
+            height: 48px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .login-overlay .toggle-more-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #555;
+            transition: background .15s, border-color .15s;
+        }
+
+        .login-overlay .toggle-more-btn:hover {
+            background: #f7f7f7;
+            border-color: #dcdcdc;
+        }
+
+        .login-overlay .toggle-more-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .login-overlay .extra-social {
+            display: none;
+            width: 100%;
+        }
+
+        .login-overlay .extra-container.active .toggle-more-btn {
+            display: none;
+        }
+
+        .login-overlay .extra-container.active .extra-social {
+            display: block;
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .login-overlay .help {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .login-overlay .link-btn {
+            border: none;
+            background: none;
+            padding: 4px;
+            color: #333;
+            font-size: 13px;
+            text-decoration: underline;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .login-overlay .link-btn:hover {
+            color: #000;
+        }
+
+        .login-overlay .terms {
+            margin: 14px 0 0;
+            text-align: center;
+            font-size: 12px;
+            line-height: 17px;
+        }
+
+        .login-overlay .terms a {
+            color: #0065be;
+            text-decoration: underline;
+        }
+
+        /* --- ALERTAS DE SEGURIDAD --- */
+        .login-overlay .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+        .login-overlay .alert.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block; }
+        .login-overlay .alert.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; display: block; }
+        .login-overlay .alert.warning { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; display: block; }
+
+        @media (max-width: 900px) {
+            .login-overlay .benefit-sep {
+                display: none;
+            }
+
+            .login-overlay .b-title,
+            .login-overlay .b-sub {
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .login-overlay {
+                align-items: flex-start;
+                padding: 12px;
+            }
+
+            .login-overlay .benefits {
+                flex-wrap: wrap;
+                gap: 16px 0;
+            }
+
+            .login-overlay .benefit {
+                flex: 0 0 50%;
+                justify-content: flex-start;
+                padding-left: 16px;
+            }
+
+            .login-overlay .caja.principal {
+                flex-direction: column;
+                margin-top: 24px;
+            }
+
+            .login-overlay .divider {
+                flex-direction: row;
+                margin: 20px 0 16px;
+            }
+
+            .login-overlay .divider::before,
+            .login-overlay .divider::after {
+                width: auto;
+                height: 1px;
+                flex: 1;
+            }
+
+            .login-overlay .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .login-overlay .contact-field.full-width,
+            .login-overlay .contact-form .btn-continue,
+            .login-overlay .contact-form-note,
+            .login-overlay .form-status {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .login-overlay .modal {
+                padding: 20px 16px 16px;
+            }
+
+            .login-overlay .benefit {
+                flex: 0 0 50%;
+                padding-left: 8px;
+            }
+
+            .login-overlay .benefit img {
+                margin-right: 6px;
+            }
+
+            .login-overlay .b-title {
+                font-size: 12px;
+            }
+
+            .login-overlay .b-sub {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+         CONTENIDO DE TEMU
+         ============================================================ -->
+
+    <!-- 1. BARRA SUPERIOR -->
+    <div class="top-bar">
+        <div class="top-bar-item">
+            <svg viewBox="0 0 1024 1024">
+                <path d="M767.1 693.8c50.7 0 91.8 40.5 91.8 90.4 0 50-41.1 90.5-91.8 90.5-50.7 0-91.8-40.5-91.8-90.5 0-50 41.1-90.5 91.8-90.4z m-433.7 0c50.7 0 91.8 40.5 91.6 90.4 0 50-41.1 90.5-91.6 90.5-50.7 0-91.8-40.5-91.8-90.5 0-50 41.1-90.5 91.8-90.4z m279.1-523.1c54.9-0.5 100 42.9 100.7 97l0 0.6 0 10.9 63.1 0.1c109.3 0.2 198 87.4 198.7 195.2l1.2 223.5c0.2 36.3-29.5 66-66.3 66.2l-4.9-0.1c-8.6-67.6-67.1-119.8-137.9-119.8-69 0-126.1 49.4-137.1 114.5l-159.7 1.6c-11.4-64.4-68.4-113.4-136.9-113.3-68.4 0-125.3 48.7-137 112.8-26.8-8.3-46.3-32.9-46.6-62l0-156.3-65.1 0.4c-25.9 0.2-47.1-20.5-47.2-46.1 0-26 21.2-46.9 47.3-46.9l65 0.1 4.3-0.1 156.2-0.3c39.8-0.1 72-31.9 72-71.3-0.1-39.2-32.4-70.9-72.2-70.8l-156.1 0.3c-1.4 0-2.8 0-4.2 0.1l0-66.4c0-36.1 29.5-65.5 66-65.8l396.7-4.1 0 0z"></path>
+            </svg>
+            <div>
+                <span>Envío gratis</span>
+                <small>Especial para ti</small>
+            </div>
+        </div>
+        <div class="top-bar-divider"></div>
+        <div class="top-bar-item">
+            <svg viewBox="0 0 1024 1024">
+                <path d="M512 107.4c212.1 0 384 171.9 384 384 0 212.1-171.9 384-384 384-31.4 0-62.4-3.8-92.4-11.2l11.8 2.6-82.6 25c-38.6 11.7-79.2-8.5-93.7-45.3l-2.1-6c-2.3-7.6-3.4-15.4-3.3-23.3l0.7-44.8-3.8-3.5c-71.8-68.7-114.9-162.8-118.4-264.3l-0.2-13.2c0-212.1 171.9-384 384-384z m-81.7 343.5c12.1 33.6 44 56.5 80.3 56.5 34 0 64.2-20 77.8-50.2l2.5-6.1c8-22.2 32.5-33.6 54.6-25.6 22.2 8 33.6 32.5 25.7 54.6-24.2 67.1-88.1 112.7-160.6 112.6-72.6 0-136.5-45.8-160.7-113-8-22.2 3.6-46.6 25.8-54.5 22.2-8 46.6 3.6 54.6 25.7z"></path>
+            </svg>
+            <div>
+                <span>Entrega garantizada</span>
+                <small>Reembolso por cualquier problema</small>
+            </div>
+        </div>
+        <div class="top-bar-divider"></div>
+        <div class="top-bar-item">
+            <svg viewBox="0 0 1024 1024">
+                <path d="M727 73.2c50.9 0 92.2 41.3 92.2 92.2l0 693.4c0 50.9-41.3 92.2-92.2 92.1l-430 0c-50.9 0-92.2-41.3-92.2-92.1l0-693.4c0-50.9 41.3-92.2 92.2-92.2z m-212.6 673.5c-28.7 0-51.9 23.2-51.9 51.8l0 2.7c0 28.7 23.2 51.9 51.9 51.9 28.7 0 51.9-23.2 51.9-51.9l0-2.7c0-28.7-23.2-51.9-51.9-51.8z m75.2-585.2l-153.2 0c-19.5 0-35.4 15.8-35.3 35.4 0 19.5 15.8 35.4 35.3 35.4l153.2 0c19.5 0 35.4-15.8 35.4-35.4 0-19.5-15.8-35.4-35.4-35.4z"></path>
+            </svg>
+            <div>
+                <span>Descarga la app de Temu</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. HEADER PRINCIPAL -->
+    <header class="main-header">
+        <div class="logo-temu" aria-label="Temu">
+            <svg viewBox="0 0 1024 1024" role="img" aria-hidden="true">
+                <path fill="#fb7701" d="M796.4 0c125.7 0 227.6 101.9 227.6 227.6l0 568.8c0 125.7-101.9 227.6-227.6 227.6l-568.8 0c-125.7 0-227.6-101.9-227.6-227.6l0-568.8c0-125.7 101.9-227.6 227.6-227.6l568.8 0z"></path>
+                <path fill="#fff" d="M540.4 531.9l-13.6 0c-12.1 0-22 9.8-21.9 21.9l0 150.5c0 12.1 9.8 22 21.9 22 12.1 0 22-9.8 22-22l0-98.8 37 52.2c7.7 10.8 23.7 10.8 31.5 0l37-52.2 0 98.8c0 12.1 9.8 22 22 22 12.1 0 22-9.8 21.9-22l0-150.5c0-12.1-9.8-22-21.9-21.9l-13.6 0c-5.2 0-10.2 2.5-13.2 6.8l-47.9 72-48-72c-3-4.3-7.9-6.8-13.2-6.8z m340.2 0c-12.1 0-22 9.8-22 21.9l0 91.9c0 28.9-16.3 43.7-43.1 43.6-26.8 0-43.1-15.3-43-44.9l0-90.6c0-12.1-9.8-22-22-21.9-12.1 0-22 9.8-21.9 21.9l0 91.6c0 53.6 32.8 80.9 86.4 80.9 53.6 0 87.6-27 87.5-82.2l0-90.3c0-12.1-9.8-22-21.9-21.9z m-616.9 0l-128.3 0c-12.1 0-22 9.8-22 21.9 0 12.1 9.8 22 22 22l42.2 0 0 128.3c0 12.1 9.8 22 21.9 22 12.1 0 22-9.8 22-22l0-128.3 42.2 0c12.1 0 22-9.8 22-22 0-12.1-9.8-22-22-21.9z m189.9 0l-118.9 0c-12.1 0-22 9.8-22 21.9l0 150.3c0 12.1 9.8 22 22 22l118.9 0c12.1 0 22-9.8 21.9-22 0-12.1-9.8-22-21.9-22l-97 0 0-31.2 84.4 0c12.1 0 22-9.8 22-21.9 0-12.1-9.8-22-22-22l-84.4 0 0-31.2 97 0c12.1 0 22-9.8 21.9-22 0-12.1-9.8-22-21.9-21.9z m-214.5-229.4l-4.1 0.1c-17.1 1.1-28.8 8.5-35.4 18.5-7.7-11.5-22.1-19.6-43.8-18.4l-0.5 0.7c-2.5 4-11.9 21.9 3.3 41.4 3.1 3.3 10.7 12.6 7.6 24.5l-44.1 71.3c-3.6 5.8-2 13.3 3.5 17.2 11.4 8 34.3 19 74 19 39.6 0 62.5-11 73.9-19l1.5-1.3c4.3-4.1 5.2-10.7 2-15.9l-44-71.3 0.3 1.3-0.5-2c-2.4-10.7 3.6-19.2 6.9-23l0.8-0.8c15.3-19.5 5.8-37.3 3.3-41.4l-0.4-0.7-4.3-0.2z m142.8 33.4c-15.1-30-34.7-35.1-44.5-27.3-7.5 6-24.8 29.7-26 31.3-19.1 27.1-18 33.7 6.5 49.1 13.8 8.7 24.9-2.5 29.7-5.8-2.3 14.3-9.3 36.8-19.8 52.6-5.7-4.3-9.9-7.6-12.5-10-3.3-3-8.3-2.8-11.5 0.3-1.5 1.5-2.3 3.5-2.2 5.7 0.1 2.1 1 4.1 2.5 5.5 25.5 23.3 59 36.5 94.7 36.6 35.8 0 69.5-13.2 95-36.6 3.3-3 3.4-8 0.4-11.2-3.2-3.2-8.2-3.3-11.5-0.3-2 1.8-4 3.5-6.1 5.2l-11.2-25c-1.8-4.3-3.8-9.7-6-16.2 1.1-2.7 3.4-5.3 6.7-8.7 2.4-2.4 4.4-4.8 5.9-7.1 7.4-11.7 3.2-18.6 0.9-23.2-5.3-10.8-13.6-7.3-19.6-0.9-7.4 7.8-14.6 11.2-26.2 13.8-9.7 2.2-17.2 1.1-23.4-2.8-8.6-5.3-21.8-25-21.8-25z m277.3-30.5c-32 30.4-1.3 96.5-59.5 124.6-6.4 3.1-11.7-7.1-20.3-7.1-24.3 0.2-70.7 21.6-72.5 32.4-1.5 8.9 18.3 16 76.7 16.1 50.8 0 67.2-77.3 85-77.4 17.8 0 9.5 70.1 7.6 77.4l18.6 0c-1.6-7.3-2.8-29.3-2.7-60.4 0-31.1 5.6-38 10.1-61.5 3.9-20.4-26.3-38.1-43-44.1z m182.4 2.5l-52.1 0c-33.7 0-61.7 26.1-64 59.7l-3.8 53.9c-1.8 25.6 18.5 47.3 44.1 47.4l99.4 0c25.7 0 45.9-21.7 44.2-47.4l-3.8-53.9c-2.4-33.6-30.3-59.7-64-59.7z m-442.6 124c15.7 0 27.7 7.7 32.1 22-10.7 2.8-21.4 4.2-32.3 4.1-16.4 0-22.2-1.5-32.7-4.3 4.2-12.6 18.1-21.8 32.9-21.8z m392.9-79.3l0 1.5c0 13 10.6 23.7 23.6 23.7 13 0 23.7-10.6 23.7-23.7l0-1.5c0-5.8 21-5.8 21 0l0 1.5c0 24.6-20 44.6-44.7 44.6-24.6 0-44.6-20-44.6-44.6l0-1.5c0-5.8 20.9-5.8 21 0z"></path>
+            </svg>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Artículos más vendidos</a>
+            <a href="#">5 estrellas</a>
+            <a href="#">Lo nuevo</a>
+            <a href="#">Categorías ▾</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="costura y confección">
+            <button>
+                <svg viewBox="0 0 1024 1024"><path d="M486.4 102.4c212.1 0 384 171.9 384 384 0 78.4-23.5 151.3-63.8 212l147.5 132.4c21 18.9 22.8 51.3 3.9 72.3-17.4 19.4-46.4 22.4-67.2 7.9l-5.1-4-146.5-131.5c-67.5 59.1-156 94.9-252.8 94.9-212.1 0-384-171.9-384-384 0-212.1 171.9-384 384-384z"></path></svg>
+            </button>
+        </div>
+        <div class="header-icons">
+            <div class="icon-item" onclick="document.querySelector('.login-overlay').style.display='flex'">
+                <svg viewBox="0 0 1024 1024"><path d="M510.8 575.6c204.6 0 323.5 71 356.9 212.9 9 38.1-14.7 76.3-52.8 85.3-5.4 1.3-10.9 1.9-16.4 1.9l-575.5 0c-39.2-0.1-70.9-31.9-70.8-71.1 0-5.4 0.6-10.8 1.9-16.1 33.2-141.9 152.1-212.9 356.7-212.9z m1.2-523.8c103.2 0 186.8 83.6 186.8 186.8 0 103.2-83.6 186.8-186.8 186.8-103.2 0-186.8-83.6-186.8-186.8 0-103.2 83.6-186.8 186.8-186.8z"></path></svg>
+                <div>
+                    <span>Iniciar sesión/Registrarse</span>
+                    <small>Pedidos y cuenta</small>
+                </div>
+            </div>
+            <div class="icon-item">
+                <svg viewBox="0 0 1024 1024"><path d="M512 107.4c212.1 0 384 171.9 384 384 0 212.1-171.9 384-384 384-31.4 0-62.4-3.8-92.4-11.2l11.8 2.6-82.6 25c-38.6 11.7-79.2-8.5-93.7-45.3l-2.1-6c-2.3-7.6-3.4-15.4-3.3-23.3l0.7-44.8-3.8-3.5c-71.8-68.7-114.9-162.8-118.4-264.3l-0.2-13.2c0-212.1 171.9-384 384-384z m-81.7 343.5c12.1 33.6 44 56.5 80.3 56.5 34 0 64.2-20 77.8-50.2l2.5-6.1c8-22.2 32.5-33.6 54.6-25.6 22.2 8 33.6 32.5 25.7 54.6-24.2 67.1-88.1 112.7-160.6 112.6-72.6 0-136.5-45.8-160.7-113-8-22.2 3.6-46.6 25.8-54.5 22.2-8 46.6 3.6 54.6 25.7z"></path></svg>
+                <span>Ayuda</span>
+            </div>
+            <div class="icon-item">
+                <span>🇪🇨 Español</span>
+            </div>
+            <div class="icon-item">
+                <svg viewBox="0 0 1024 1024"><path d="M373.3 916.1c32.8 0 59.4-26.6 59.5-59.4 0-32.8-26.6-59.4-59.5-59.4-32.8 0-59.4 26.6-59.4 59.4 0 32.8 26.6 59.4 59.4 59.4z m396.2 0c32.8 0 59.4-26.6 59.5-59.4 0-32.8-26.6-59.4-59.5-59.4-32.8 0-59.4 26.6-59.4 59.4 0 32.8 26.6 59.4 59.4 59.4z m-684.2-815.1l90.3 17.4c49.9 9.6 88.7 49.2 97.2 99.4l2.3 13.8 486.2 0c91.4 0 165.5 74.1 165.5 165.5 0 8.8-0.7 17.6-2.1 26.3l-28.9 179.1c-12.6 78.3-80.2 135.8-159.4 135.8l-335.9 0c-80.8 0-149.1-59.7-160-139.6l-43-314.8-0.5-2.3-8.4-49.6c-2.5-15-14.2-26.9-29.1-29.8l-90.3-17.4c-23.1-4.4-38.3-26.8-33.9-49.9 4.4-23.1 26.8-38.3 50-33.9z"></path></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. BANNERS VERDES -->
+    <div class="green-banner">
+        <div class="features">
+            <span><svg viewBox="0 0 1024 1024"><path d="M549.7 128.9l284.8 111.9c27.3 10.7 44.8 37.6 43.5 66.9l-6.9 165.7c-5.7 135.5-73.3 260.9-183.4 340l-58.7 42.2c-72 51.7-168.9 51.7-240.9 0.1l-57.5-41.3c-109.9-79-176.5-204.7-180.2-340l-4.6-167c-0.8-28.6 16.3-54.7 42.8-65.6l275.3-112.3c27.5-11.2 58.2-11.4 85.8-0.6z"></path></svg> ¿Por qué elegir Temu?</span>
+            <span><svg viewBox="0 0 1024 1024"><path d="M512 61.6c127 0 230 103 230 229.9l-0.1 64 38 0c60.2 0 109.1 48.8 109 109.1l0 388.7c0 60.2-48.8 109.1-109 109.1l-535.8 0c-60.2 0-109.1-48.8-109-109.1l0-388.7c0-60.2 48.8-109.1 109-109.1l37.9 0 0-64c0-127 103-230 230-229.9z"></path></svg> Privacidad segura</span>
+            <span><svg viewBox="0 0 1024 1024"><path d="M860.5 169.4c44 0 79.7 36.5 79.7 81.4l0 522.4c0 44.9-35.7 81.4-79.7 81.4l-697 0c-44 0-79.7-36.5-79.7-81.4l0-522.4c0-44.9 35.7-81.4 79.7-81.4l697 0z"></path></svg> Pagos seguros</span>
+            <span><svg viewBox="0 0 1024 1024"><path d="M671 154.7c53.4 0 96.8 43.3 96.8 96.9l0 55.1 153.5 59.1c37.4 14.4 62 50.3 61.9 90.3l0 226.9c0 49.9-37.8 91-86.3 96.3l0.2-4.8c0 65.2-54.3 117.5-120.7 117.4-64.5 0-117.6-49.4-120.5-112l-275.9 0 0 1c-3.4 62.1-56.3 111-120.6 111-64.5 0-117.6-49.4-120.4-112l-1.4 0c-53.4 0-96.8-43.3-96.8-96.9l0-431.4c0-53.4 43.3-96.8 96.8-96.9l533.4 0 0 0z"></path></svg> Entrega garantizada</span>
+        </div>
+        <div class="arrow-btn"><svg viewBox="0 0 1024 1024"><path d="M323.7 111.7c19.8-19.8 50.7-21.8 72.7-5.9l6.9 5.9 362.1 362.1c19.8 19.8 21.8 50.7 5.9 72.6l-5.9 7-362.1 362.1c-22 22-57.7 22-79.6 0-19.8-19.8-21.8-50.7-5.9-72.7l5.9-7 322.1-322.2-322.1-322.2c-19.8-19.8-21.8-50.7-5.9-72.7l5.9-7z"></path></svg></div>
+    </div>
+    <div class="warning-banner">
+        <div class="text">
+            <svg viewBox="0 0 1024 1024"><path d="M829.7 783.4l-54.9-97.2c-25.4-44.9-38.8-96.2-38.8-148.5l0-85.1c0-107.5-67.6-198.4-160-227.7l0-61c0-37.4-28.7-67.9-64-67.9-35.3 0-64 30.5-64 67.9l0 61c-92.4 29.3-160 120.2-160 227.7l0 85.1c0 52.3-13.4 103.7-38.8 148.5l-54.9 97.2c-3 5.3-3 11.8-0.2 17.1 2.8 5.3 8.1 8.6 13.9 8.6l608 0c5.8 0 11.1-3.3 13.9-8.5 2.8-5.3 2.7-11.9-0.2-17.2z"></path></svg>
+            Tenga cuidado con los mensajes sobre problemas de entrega que dicen ser de Correos de Ecuador.
+        </div>
+        <div class="action">Ver ></div>
+    </div>
+
+    <!-- 4. SECCIÓN OFERTAS -->
+    <div class="flash-sales">
+        <!-- Ofertas Relámpago -->
+        <div class="flash-column">
+            <div class="flash-header">
+                <h2 style="color: #FB7701;">
+                    <svg viewBox="0 0 1024 1024" aria-hidden="true" fill="currentColor"><path d="M346.9 64l317.5 0c17.7 0 32 14.3 32 32 0 4.4-0.9 8.8-2.7 12.8l-115.4 264.3 0 0 217.2 0c17.7 0 32 14.3 32 32 0 8.2-3.1 16-8.7 22l-475.2 504.6c-12.1 12.9-32.4 13.5-45.2 1.4-8.6-8.1-12-20.2-9-31.6l84.1-315.3 0 0-199.2 0c-17.7 0-32-14.3-32-32 0-3.9 0.7-7.7 2-11.3l172.7-458.2c4.7-12.5 16.6-20.7 29.9-20.7z"></path></svg>
+                    OFERTAS RELÁMPAGO
+                </h2>
+                <span class="more-link">Ofertas por tiempo limitado ></span>
+            </div>
+            <div class="flash-products">
+                <div class="flash-card">
+                    <div class="img-container">
+                        <img src="https://img.kwcdn.com/product/fancy/7d1cae2f-03ee-4c46-a43c-53666489bcd3.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Alfombra de baño de felpa">
+                        <span class="ad-tag">Anuncio</span>
+                    </div>
+                    <div class="price-info">
+                        <span class="current-price">$5,37</span>
+                        <span class="old-price">$9,66</span>
+                        <div class="discount">-44% tiempo limitado</div>
+                    </div>
+                </div>
+                <div class="flash-card">
+                    <div class="img-container">
+                        <img src="https://img.kwcdn.com/product/fancy/bab92481-e78a-40a7-ab15-d94bd3b37749.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Removedor de manchas amarillas">
+                        <span class="ad-tag">Anuncio</span>
+                    </div>
+                    <div class="price-info">
+                        <span class="current-price">$3,92</span>
+                        <span class="old-price">$6,99</span>
+                        <div class="discount">-43% tiempo limitado</div>
+                    </div>
+                </div>
+                <div class="flash-card">
+                    <div class="img-container">
+                        <img src="https://img.kwcdn.com/product/fancy/4d40b65c-d4df-4b4c-8e5e-f0c97050dadf.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Funda transparente magnética para teléfono">
+                    </div>
+                    <div class="price-info">
+                        <span class="current-price">$1,77</span>
+                        <span class="old-price">$3,06</span>
+                        <div class="discount">-42% tiempo limitado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Ofertas Liquidación -->
+        <div class="flash-column">
+            <div class="flash-header">
+                <h2 style="color: #D9001B;">
+                    <svg viewBox="0 0 1024 1024" aria-hidden="true" fill="currentColor"><path d="M297.4 27.9l88.8 208.9c4.1 9.7 15.3 14.2 24.9 10.1l129-58.4c26.9-12.2 58.3-1.8 72.9 23.2l3.1 6.4 164.4 384.6 153.4-69.5c26.5-12 54.5 12.8 46.5 41.2l-119 420.2c-5.6 19.6-26.4 30.3-45.1 23.1l-436.4-168.6c-28.4-11-29.3-51.6-1.4-64.3l147.1-66.6-69.2-164.1c-12.2-29-45.7-42.7-74.7-30.4l-96 40.6c-29 12.3-62.5-1.2-74.8-30.2l-170.3-400.5c-7.6-17.8-0.5-38.3 15.8-47.7l4.9-2.4 186.7-75.9c19.2-7.8 41.2 1.2 49.4 20.3z"></path></svg>
+                    OFERTAS DE LIQUIDACIÓN
+                </h2>
+                <span class="more-link">Inventario limitado ></span>
+            </div>
+            <div class="flash-products">
+                <div class="flash-card">
+                    <div class="img-container">
+                        <img src="https://img.kwcdn.com/product/fancy/d5f9c679-b074-4037-84ff-ba56dca0d52c.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Camisa de manga larga para mujer">
+                    </div>
+                    <div class="price-info">
+                        <span class="current-price">$9,32</span>
+                        <span class="old-price">$17,17</span>
+                        <div class="discount">-46% tiempo limitado</div>
+                    </div>
+                </div>
+                <div class="flash-card">
+                    <div class="img-container">
+                        <img src="https://img.kwcdn.com/product/fancy/2cb1227f-a5c9-4c37-86f4-83d991d79b2f.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Soportes para mopa y escoba">
+                    </div>
+                    <div class="price-info">
+                        <span class="current-price">$3,20</span>
+                        <span class="old-price">$5,69</span>
+                        <div class="discount">-44% tiempo limitado</div>
+                    </div>
+                </div>
+                <div class="flash-card">
+                    <div class="img-container">
+                        <img src="https://img.kwcdn.com/product/open/4fbd8ac4618749fea6bec917ab87c58b-goods.jpeg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Estantes de esquina para ducha">
+                        <span class="ad-tag">Anuncio</span>
+                    </div>
+                    <div class="price-info">
+                        <span class="current-price">$4,31</span>
+                        <span class="old-price">$7,21</span>
+                        <div class="discount">-40% tiempo limitado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. EXPLORA TUS INTERESES -->
+    <div class="interests-section">
+        <div class="_3odMaoGt _1m796N1L _3bBSIqrV interests-hero">
+            <div class="_1nMmLviB _3iTEKYz5">
+                <div class="_14PjlCdZ">
+                    <img data-state="succ" src="https://aimg.kwcdn.com/material-put/211523419d4/5e4b0cfa-bbc4-4e4b-b01e-63f608115eda.png?imageMogr2/thumbnail/1300x9999>/quality/80/format/avif" alt="Bueno, bonito y barato" class="lazy-image _6pDFIMGU loaded">
+                </div>
+                <div class="HvqRZcRc _3iTEKYz5">
+                    <h2 aria-label="EXPLORA TUS INTERESES" class="_1UynudNF">EXPLORA TUS INTERESES</h2>
+                </div>
+            </div>
+        </div>
+        <div class="category-list">
+            <button class="category-btn active">Recomendado</button>
+            <button class="category-btn">Calzado de niños</button>
+            <button class="category-btn">Ropa de playa</button>
+            <button class="category-btn">Lencería y pijamas de mujer</button>
+            <button class="category-btn">Hogar inteligente</button>
+            <button class="category-btn">Calzado de mujer</button>
+            <button class="category-btn">Moda infantil</button>
+            <button class="category-btn">Belleza y cuidado personal</button>
+            <button class="category-btn">Electrodomésticos</button>
+        </div>
+    </div>
+
+    <!-- 6. GRID DE PRODUCTOS (15 productos) -->
+    <div class="products-grid">
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/774c15e0-170e-4a88-9c56-c76fd949b969.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Batidor">
+                <span class="ad-tag">Anuncio</span>
+            </div>
+            <div class="price-info">
+                <span class="current-price">$3,37</span>
+                <span class="old-price">$5,63</span>
+                <div class="sales">150K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/93369ad7-c65e-4a21-a21b-bd618499cf4d.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Gomas de pelo">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$1,95</span>
+                <span class="old-price">$3,34</span>
+                <div class="sales">450K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/7627737e-7f81-41d8-96ee-b8203256b48b.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Chaleco">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$15,72</span>
+                <span class="old-price">$26,23</span>
+                <div class="sales">10K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/ab1279e2-3764-4d68-8c9b-80b8b4724a1f.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Chaqueta">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$10,04</span>
+                <span class="old-price">$16,75</span>
+                <div class="sales">19K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 5 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/open/66b7755512eb415b9f46981bb077173e-goods.jpeg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Tabla">
+                <span class="ad-tag">Anuncio</span>
+            </div>
+            <div class="price-info">
+                <span class="current-price">$5,28</span>
+                <span class="old-price">$8,86</span>
+                <div class="sales">1,5K+ ventas</div>
+                <div class="badge">RECIÉN LLEGADO</div>
+            </div>
+        </div>
+        <!-- Producto 6 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/open/1f58c10ddf24497c9740af49f67afa86-goods.jpeg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Colador">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$1,87</span>
+                <span class="old-price">$3,34</span>
+                <div class="sales">100K+ ventas</div>
+                <div class="badge">MEJOR CALIFICADO</div>
+            </div>
+        </div>
+        <!-- Producto 7 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/d2ed6b27-39ba-4381-b1eb-60d66348e595.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Pantalones">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$13,47</span>
+                <span class="old-price">$22,49</span>
+                <div class="sales">11K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 8 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/open/3b2f16c6001349958dff6ca7d147ddf1-goods.jpeg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Vestido">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$24,36</span>
+                <span class="old-price">$40,64</span>
+                <div class="sales">5,2K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 9 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/open/0dc41c5b1a0c40f4904523d63e487fcc-goods.jpeg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Cortaúñas">
+                <span class="ad-tag">Anuncio</span>
+            </div>
+            <div class="price-info">
+                <span class="current-price">$3,88</span>
+                <span class="old-price">$6,48</span>
+                <div class="sales">32K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 10 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/b1d46551-5c5a-43f1-bcd7-85f8592d261f.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Funda">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$1,57</span>
+                <span class="old-price">$2,62</span>
+                <div class="sales">81K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 11 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/open/4fbd8ac4618749fea6bec917ab87c58b-goods.jpeg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Alfombra de baño">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$4,31</span>
+                <span class="old-price">$7,21</span>
+                <div class="sales">24K+ ventas</div>
+                <div class="badge">OFERTA ESPECIAL</div>
+            </div>
+        </div>
+        <!-- Producto 12 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/2cb1227f-a5c9-4c37-86f4-83d991d79b2f.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Limpiador de manchas">
+                <span class="ad-tag">Anuncio</span>
+            </div>
+            <div class="price-info">
+                <span class="current-price">$3,92</span>
+                <span class="old-price">$6,99</span>
+                <div class="sales">36K+ ventas</div>
+                <div class="badge">ARTÍCULO MÁS VENDIDO</div>
+            </div>
+        </div>
+        <!-- Producto 13 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/d5f9c679-b074-4037-84ff-ba56dca0d52c.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Funda magnética para teléfono">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$1,77</span>
+                <span class="old-price">$3,06</span>
+                <div class="sales">95K+ ventas</div>
+                <div class="badge">PRECIO EXCLUSIVO</div>
+            </div>
+        </div>
+        <!-- Producto 14 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/4d40b65c-d4df-4b4c-8e5e-f0c97050dadf.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Camisa de manga larga">
+            </div>
+            <div class="price-info">
+                <span class="current-price">$9,32</span>
+                <span class="old-price">$17,17</span>
+                <div class="sales">12K+ ventas</div>
+                <div class="badge">OFERTA RELÁMPAGO</div>
+            </div>
+        </div>
+        <!-- Producto 15 -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://img.kwcdn.com/product/fancy/bab92481-e78a-40a7-ab15-d94bd3b37749.jpg?imageMogr2/thumbnail/500x9999>/quality/70/format/avif" alt="Soportes para mopa y escoba">
+                <span class="ad-tag">Anuncio</span>
+            </div>
+            <div class="price-info">
+                <span class="current-price">$3,20</span>
+                <span class="old-price">$5,69</span>
+                <div class="sales">41K+ ventas</div>
+                <div class="badge">MEJOR CALIFICADO</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="load-more-section">
+        <button class="load-more-button" type="button" aria-label="Ver más artículos">
+            <span>Ver más</span>
+            <svg viewBox="0 0 1024 1024" aria-hidden="true"><path d="M915.5 360.6c19.8 19.8 21.8 50.7 5.9 72.6l-5.9 7-362.1 362c-19.8 19.8-50.7 21.8-72.7 6l-6.9-6-362.1-362c-22-22-22-57.7 0-79.6 19.8-19.8 50.7-21.8 72.7-6l7 6 322.2 322.1 322.2-322.1c19.8-19.8 50.7-21.8 72.7-6l7 6z"></path></svg>
+        </button>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <section class="footer-column">
+                    <h3>Información de la empresa</h3>
+                    <ul>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Acerca de Temu</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Programa de Afiliados e Influencers: Únete para ganar</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Contáctanos</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Carreras profesionales</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Prensa</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Programa de plantación de árboles Temu</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer-column">
+                    <h3>Atención al cliente</h3>
+                    <ul>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Política de devolución y reembolso</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Política de propiedad intelectual</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Información de envío</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Reportar actividad sospechosa</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer-column">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Centro de ayuda y preguntas frecuentes</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Centro de seguridad</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Protección de compras de Temu</a></li>
+                        <li><a href="#" aria-disabled="true" tabindex="-1">Asóciate a Temu</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer-column footer-column--app">
+                    <h3>Descarga la App de Temu</h3>
+                    <div class="footer-app-features">
+                        <span class="footer-app-feature">Alertas de baja de precios</span>
+                        <span class="footer-app-feature">Rastrea pedidos en todo momento</span>
+                        <span class="footer-app-feature">Pago más rápido y seguro</span>
+                        <span class="footer-app-feature">Alertas de artículos</span>
+                        <span class="footer-app-feature">Ofertas exclusivas</span>
+                        <span class="footer-app-feature">Alertas de cupones</span>
+                    </div>
+                    <div class="app-badges">
+                        <div class="app-badge"><small>Descargar en</small><strong>App Store</strong></div>
+                        <div class="app-badge"><small>Descargar en</small><strong>Google Play</strong></div>
+                    </div>
+                    <h3>Conectar con Temu</h3>
+                    <div class="social-list" aria-label="Redes sociales">
+                        <span class="social-icon">◎</span>
+                        <span class="social-icon">f</span>
+                        <span class="social-icon">X</span>
+                        <span class="social-icon">♪</span>
+                        <span class="social-icon">▶</span>
+                        <span class="social-icon">P</span>
+                    </div>
+                </section>
+            </div>
+
+            <div class="footer-trust">
+                <section>
+                    <h3>Certificación de seguridad</h3>
+                    <div class="footer-logo-row">
+                        <img alt="PCI DSS" src="https://aimg.kwcdn.com/upload_aimg/temu/80d57653-6e89-4bd5-82c4-ac1e8e2489fd.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Visa Secure" src="https://aimg.kwcdn.com/upload_aimg/temu/bcb8bf23-78c9-45ab-b480-f7020d1a5f66.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Mastercard ID Check" src="https://aimg.kwcdn.com/upload_aimg/temu/28a227c9-37e6-4a82-b23b-0ad7814feed1.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="SafeKey" src="https://aimg.kwcdn.com/upload_aimg/temu/f1c00d04-7dde-4d4a-ae3d-b8aad2de8f96.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Discover ProtectBuy" src="https://aimg.kwcdn.com/upload_aimg/temu/65e96f45-9ff5-435a-afbf-0785934809ef.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="JCB J/Secure" src="https://aimg.kwcdn.com/upload_aimg/temu/1f29a857-fe21-444e-8617-f57f5aa064f4.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Aceptamos</h3>
+                    <div class="footer-logo-row">
+                        <img alt="PayPal" src="https://commimg.kwcdn.com/upload_commimg/payment/paypal/61e1e415-4225-44bb-9af1-a95e1b2b1b0e.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Visa" src="https://aimg.kwcdn.com/upload_aimg/temu/da7f463a-916f-4d91-bcbb-047317a1c35e.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Mastercard" src="https://aimg.kwcdn.com/upload_aimg/temu/b79a2dc3-b089-4cf8-a907-015a25ca12f2.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Maestro" src="https://aimg.kwcdn.com/upload_aimg/temu/fb599a1d-6d42-49f2-ba7a-64b16d01b226.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="American Express" src="https://aimg.kwcdn.com/upload_aimg/temu/936bf9dc-9bb2-4935-9c5a-a70b800d4cf1.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Discover" src="https://aimg.kwcdn.com/upload_aimg/temu/219cc18d-0462-47ae-bf84-128d38206065.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="JCB" src="https://aimg.kwcdn.com/upload_aimg/temu/c3e5eb19-1b60-4c2b-87e1-4528fb390cbf.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Apple Pay" src="https://aimg.kwcdn.com/upload_aimg/launch/3a626fff-bbf7-4a26-899a-92c42eef809a.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                        <img alt="Google Pay" src="https://aimg.kwcdn.com/upload_aimg/temu/ac293ffc-9957-4588-a4df-f3397b4a54e0.png.slim.png?imageMogr2/thumbnail/120x9999>/quality/70/format/avif">
+                    </div>
+                </section>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2022–2026 Whaleco Inc.</span>
+                <a href="#" aria-disabled="true" tabindex="-1">Términos de uso</a>
+                <a href="#" aria-disabled="true" tabindex="-1">Política de privacidad</a>
+                <a href="#" aria-disabled="true" tabindex="-1">Tus preferencias de privacidad</a>
+                <a href="#" aria-disabled="true" tabindex="-1">Gestión de anuncios</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         MODAL LOGIN / REGISTRO (CON LÓGICA DE SEGURIDAD)
+         ============================================================ -->
+    <div class="login-overlay" role="dialog" aria-modal="true" aria-label="Iniciar sesión / Registrarse">
+        <div class="modal">
+            <button class="close" type="button" aria-label="Cerrar" onclick="document.querySelector('.login-overlay').style.display='none'">
+                <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true">
+                    <path d="M893.9 129.6c22.2 22.2 22.2 58.2 0 80.4L592.2 511.7l301.7 301.7c22.2 22.2 22.2 58.2 0 80.5-22.2 22.2-58.2 22.2-80.5 0L511.7 592.2 210 893.9c-22.2 22.2-58.2 22.2-80.4 0-22.2-22.2-22.2-58.2 0-80.5l301.7-301.7L129.6 210c-22.2-22.2-22.2-58.2 0-80.4 22.2-22.2 58.2-22.2 80.4 0l301.7 301.7 301.7-301.7c22.2-22.2 58.2-22.2 80.5 0z" />
+                </svg>
+            </button>
+            <h1 class="title">Iniciar sesión/Registrarse</h1>
+            <p class="secure">
+                <svg viewBox="0 0 1024 1024" aria-hidden="true">
+                    <path d="M512 30.7c138.6 0 250.9 112.3 250.9 250.9v61.4h35.8c59.5 0 108.2 46.1 112.4 104.6l.3 8.1v419.8c0 62.2-50.4 112.6-112.7 112.7H225.3c-62.2 0-112.6-50.4-112.7-112.7V455.7c0-62.2 50.4-112.6 112.7-112.7h35.8v-61.4C261.1 146.8 367.4 36.8 500.8 31l11.2-.3zm0 506.9c-22.6 0-41 18.3-41 41v174c0 22.6 18.3 41 41 41 22.6 0 41-18.3 41-41v-174c0-22.6-18.3-41-41-41zm0-414.7c-87.7 0-158.7 71.1-158.7 158.7v56.3h317.4v-56.3c0-84.6-66.2-153.8-149.7-158.5l-9-.2z" />
+                </svg>
+                <span class="span-green">Todos los datos están protegidos</span>
+            </p>
+            
+            <!-- AQUÍ SE MUESTRAN LAS ALERTAS DE LOGIN -->
+            <div id="loginAlert" class="alert"></div>
+
+            <div class="benefits">
+                <div class="benefit">
+                    <img src="https://aimg.kwcdn.com/upload_aimg/basic_pic/146367cf-4c04-4f31-93f6-0d6cc75c9708.png?imageMogr2/thumbnail/72x9999>/quality/80/format/avif" alt="Ajuste de precios">
+                    <div class="b-text"><span class="b-title">Ajuste de precios</span><span class="b-sub">En un plazo de 30&nbsp;días</span></div>
+                </div>
+                <div class="benefit-sep"></div>
+                <div class="benefit">
+                    <img src="https://aimg.kwcdn.com/upload_aimg/basic_pic/2a9dd0eb-a9e4-4801-af6b-ab1a906abda9.png?imageMogr2/thumbnail/72x9999>/quality/80/format/avif" alt="Envío gratis">
+                    <div class="b-text"><span class="b-title">Envío gratis</span><span class="b-sub">¡Solo para ti!</span></div>
+                </div>
+                <div class="benefit-sep"></div>
+                <div class="benefit">
+                    <img src="https://aimg.kwcdn.com/upload_aimg/account/82e0788a-4a3b-4972-a7a6-f8d69dbac473.png.slim.png?imageMogr2/thumbnail/72x9999>/quality/80/format/avif" alt="Devoluciones gratis">
+                    <div class="b-text"><span class="b-title">Devoluciones gratis</span><span class="b-sub">Hasta 90&nbsp;días</span></div>
+                </div>
+                <div class="benefit-sep"></div>
+                <div class="benefit">
+                    <img src="https://aimg.kwcdn.com/upload_aimg/basic_pic/5b84cdca-b5ac-4ecb-aa9a-edeae4aa5c32.png?imageMogr2/thumbnail/72x9999>/quality/80/format/avif" alt="Entrega garantizada">
+                    <div class="b-text"><span class="b-title">Entrega garantizada</span><span class="b-sub">Reembolso por cualquier problema</span></div>
+                </div>
+            </div>
+
+            <div class="caja principal" id="loginBox">
+                <div class="caja1">
+                    <form class="form" id="loginForm" method="POST" action="/login">
+                        <label class="label" for="usuario">Usuario</label>
+                        <input id="usuario" name="usuario" class="input" type="text" required placeholder="Ingresa tu usuario (demo)">
+                        <label class="label" for="clave" style="margin-top:12px;">Clave</label>
+                        <input id="clave" name="clave" class="input" type="password" required placeholder="Ingresa tu clave (Lab2026!)">
+                        <button class="btn-continue" type="submit" id="btnLogin">Continuar</button>
+                    </form>
+                </div>
+                <div class="divider"><span>O</span></div>
+                <div class="caja3">
+                    <div class="social">
+                        <button class="social-btn" type="button" aria-label="Continuar con Google">
+                            <svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                            <span>Continuar con Google</span>
+                        </button>
+                        <button class="social-btn" type="button" aria-label="Continuar con Facebook">
+                            <svg viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg>
+                            <span>Continuar con Facebook</span>
+                        </button>
+                        <button class="social-btn" type="button" aria-label="Continuar con Apple">
+                            <svg viewBox="0 0 1024 1024" fill="#111"><path d="M503.4 228.7c41.5 0 93.5-27.6 124.5-64.5 28-33.4 48.5-80 48.6-126.7 0-6.3-.6-12.6-1.8-17.8-46.2 1.7-101.7 30.5-135.1 69.1-26.3 29.3-50.3 75.4-50.2 122.7 0 6.9 1.2 13.8 1.7 16.1 3 .6 7.6 1.1 12.3 1.1zM357.3 925.5c56.7 0 81.8-37.4 152.5-37.4 71.9 0 87.7 36.2 150.9 36.3 62 0 103.5-56.4 142.6-111.7 43.8-63.3 62-125.5 63.2-128.4-4.1-1.2-122.8-49-122.8-183.2 0-116.3 93.5-168.7 98.8-172.8-62-87.5-156.1-89.8-181.8-89.7-69.6 0-126.3 41.4-162 41.4-38.6 0-89.4-39.1-149.6-39.2-114.6 0-230.9 93.3-230.9 269.5 0 109.4 43.2 225.2 96.4 300.1 45.5 63.3 85.3 115.2 142.6 115.1z"/></svg>
+                            <span>Continuar con Apple</span>
+                        </button>
+                    </div>
+                    <div class="extra-container" id="extraContainer">
+                        <button class="toggle-more-btn" id="togglePhoneBtn" type="button" aria-label="Mostrar más opciones">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+                        </button>
+                        <div class="extra-social">
+                            <button class="social-btn" type="button" aria-label="Continuar con Número de teléfono">
+                                <svg viewBox="0 0 24 24" fill="#111"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" /></svg>
+                                <span>Continuar con Número de teléfono</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="terms">
+                Al continuar, aceptas nuestros <a href="#">Términos de uso</a> y <a href="#">Política de privacidad</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         SCRIPT PARA LEER LOS ERRORES DEL BACKEND
+         ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorMsg = urlParams.get('error');
+            if (errorMsg) {
+                const alertBox = document.getElementById('loginAlert');
+                alertBox.textContent = errorMsg;
+                if (errorMsg.includes('bloqueada')) {
+                    alertBox.className = 'alert warning';
+                } else {
+                    alertBox.className = 'alert error';
+                }
+                // Mostrar el modal automáticamente si hay error
+                document.querySelector('.login-overlay').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+
+</html>
