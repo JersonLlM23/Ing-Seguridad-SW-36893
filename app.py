@@ -49,7 +49,7 @@ def login():
     if usuario == USUARIO_FIJO and clave == CLAVE_FIJA:
         intentos_fallidos = 0
         loggear(fecha, usuario, "EXITO", ip, "Inactivo")
-        return "<h1>Acceso concedido. ¡Bienvenido!</h1><p>SIMULACIÓN — SOLO LABORATORIO</p>"
+        return render_template('bienvenida.html')
     else:
         intentos_fallidos += 1
         
